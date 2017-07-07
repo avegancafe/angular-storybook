@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import NavBar from '@components/NavBar'
+import Workspace from '@containers/Workspace'
+import { Div } from 'glamorous'
 
 export default class App extends Component {
   render() {
     return (
-      <h1>
+      <Div fontSize="18px">
         <NavBar />
-      </h1>
+        <Workspace />
+      </Div>
     )
   }
 }

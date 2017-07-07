@@ -2,10 +2,23 @@
 <html>
   <head>
     <title>Sample App</title>
+    <link href="/static/assets/horse.css" rel="stylesheet" />
+    <script src="/static/assets/angular/angular.js"></script>
   </head>
   <body>
-    <div id='root'>
+    <div id="root" ng-app="storybook">
     </div>
+    <script>
+      angular.module('storybook', [])
+      function injectComponent(name) {
+        var $injector = angular.injector(['ng', 'storybook'])
+        $injector.invoke(function($rootScope, $compile) {
+          const elem = $compile(`<${name}></${name}>`)($rootScope.$new())
+          const compContainer = document.querySelector('.storybook-component')
+          compContainer.appendChild(elem[0])
+        })
+      }
+    </script>
     <script src="/static/bundle.js"></script>
   </body>
 </html>
