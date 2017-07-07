@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import List from '@components/List'
+import NavBar from '@components/NavBar'
 
 export default class App extends Component {
   render() {
     return (
       <h1>
-        <List />
+        <NavBar />
       </h1>
     )
   }
